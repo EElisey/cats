@@ -8,26 +8,6 @@ const ControlsContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const Button = styled.button`
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #45a049;
-  }
-
-  &:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-`;
-
 const CheckboxContainer = styled.label`
   display: flex;
   align-items: center;
@@ -70,7 +50,11 @@ export const Controls = ({
         />
         <span>Auto-refresh every 5 seconds</span>
       </CheckboxContainer>
-      <button onClick={onRefresh} disabled={!enabled || isLoading} style={{cursor: "pointer", height:"50px"}}>
+      <button
+        onClick={onRefresh}
+        disabled={!enabled || isLoading}
+        style={{ cursor: "pointer", height: "50px" }}
+      >
         Get Cat
       </button>
     </ControlsContainer>
